@@ -14,7 +14,8 @@ api_id = int(os.environ.get("API_ID", 0))          # set API_ID in env
 api_hash = os.environ.get("API_HASH", "")        # set API_HASH in env
 session_path = os.environ.get("SESSION_PATH", "session_name")
 
-client = TelegramClient(session_path, api_id, api_hash)
+# client = TelegramClient(session_path, api_id, api_hash)
+client = TelegramClient("railway_session", api_id, api_hash)
 
 keywords = ["internship", "hiring", "vacancy"]
 
@@ -39,3 +40,4 @@ async def handler(event):
 client.start()
 print("Bot is running...")
 client.run_until_disconnected()
+
